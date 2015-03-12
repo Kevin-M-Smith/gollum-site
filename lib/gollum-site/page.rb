@@ -57,9 +57,9 @@ module Gollum
              end
 
       if !preserve_path || path =~ /^\./
-        dest = ::File.join(output_path, self.class.cname(name))
+        dest = ::File.join(output_path, '/', self.class.cname(name), 'index.html')
       else
-        dest = ::File.join(output_path, ::File.dirname(path), self.class.cname(name))
+        dest = ::File.join(output_path, ::File.dirname(path), '/', self.class.cname(name), 'index.html')
       end
 
       ::FileUtils.mkdir_p(::File.dirname(dest))
